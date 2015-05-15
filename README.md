@@ -1,4 +1,20 @@
-<<<<<<< HEAD
+# Enunciado
+
+**Tenéis que "materializar" esta aplicación. Solo la parte de IU no hay que tocar nada de la funcionalidad.**
+
+**https://github.com/mresti/Task-Materialize-Android-App**
+
+**La presentación y código del tutorial sobre Material Design lo tenéis en:**
+
+**[Presentación](https://speakerdeck.com/mresti/material-design-in-android)**
+
+**[Ejemplos](https://github.com/mresti/Task-Materialize-Android-App)**
+
+
+
+
+***
+
 # Materialize-App
 Materializar una aplicación
 =======
@@ -26,4 +42,3 @@ Specifically, the request is made to a public API that shows different memes and
 This project is focused on supporting the second meeting of the Android Study Group by [GDG Vigo](http://gdgvigo.com/)
 
 
->>>>>>> 04f094c3f6fc212db1c5f6b5b167d993683b852e
