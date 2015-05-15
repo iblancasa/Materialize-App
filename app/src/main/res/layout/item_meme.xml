@@ -7,11 +7,23 @@
     android:padding="@dimen/activity_horizontal_margin"
     >
 
-    <ImageView
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/item_meme_image"
+        android:scaleType="fitCenter"
+      
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="#ffe5e5e5"
+
+        app:riv_mutate_background="true"
+        app:riv_oval="true"
         />
 
     <LinearLayout
