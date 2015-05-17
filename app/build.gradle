@@ -37,4 +37,5 @@ dependencies {
     compile 'com.koushikdutta.ion:ion:2.0.9'
 
     compile 'com.makeramen:roundedimageview:2.0.1'
+    compile 'com.android.support:recyclerview-v7:+'
 }

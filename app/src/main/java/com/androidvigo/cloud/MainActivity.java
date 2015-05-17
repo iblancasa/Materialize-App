@@ -2,12 +2,14 @@ package com.androidvigo.cloud;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
@@ -15,10 +17,10 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity
     implements GetMemesCallback {
 
-    private ListView mMemesListView;
+
     private ProgressBar mLoadingProgressBar;
     private Toolbar toolbar;
-
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,22 @@ public class MainActivity extends ActionBarActivity
         toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
-        mMemesListView      = (ListView) findViewById(R.id.activity_main_memes_listview);
+
         mLoadingProgressBar = (ProgressBar) findViewById(R.id.activity_main_loading_indicator);
+
+
+
+        //Instalando el recyclerview
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(mLayoutManager);
+
+        // RecyclerView ItemDecoration (divider)
+        final RecyclerView.ItemDecoration itemDecoration = new Divider(this);
+        recyclerView.addItemDecoration(itemDecoration);
+
     }
 
 
@@ -44,9 +60,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -79,9 +93,14 @@ public class MainActivity extends ActionBarActivity
         for (int i = 0; i < memesList.size(); i++)
             memesNames[i] = memesList.get(i).getTitle();
 
-        MemeAdapter memesAdapter = new MemeAdapter(this, memesList);
+       // MemeAdapter memesAdapter = new MemeAdapter(this, memesList);
 
-        mMemesListView.setAdapter(memesAdapter);
+       // mMemesListView.setAdapter(memesAdapter);
+
+        final Adapter adapter = new Adapter(memesList,this);
+        recyclerView.setAdapter(adapter);
+
+
     }
 
     @Override
