@@ -7,9 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -47,6 +47,21 @@ public class MainActivity extends ActionBarActivity
         final RecyclerView.ItemDecoration itemDecoration = new Divider(this);
         recyclerView.addItemDecoration(itemDecoration);
 
+
+        View fabView = findViewById(R.id.fab_add);
+        fabView.setVisibility(View.INVISIBLE);
+
+        fabView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast toast =
+                        Toast.makeText(getApplicationContext(),
+                                "Sin acciones definidas", Toast.LENGTH_SHORT);
+
+                toast.show();
+            }
+        });
     }
 
 
@@ -88,19 +103,18 @@ public class MainActivity extends ActionBarActivity
 
         mLoadingProgressBar.setVisibility(View.GONE);
 
-        String [] memesNames = new String[memesList.size()];
+        String[] memesNames = new String[memesList.size()];
 
         for (int i = 0; i < memesList.size(); i++)
             memesNames[i] = memesList.get(i).getTitle();
 
-       // MemeAdapter memesAdapter = new MemeAdapter(this, memesList);
+        // MemeAdapter memesAdapter = new MemeAdapter(this, memesList);
 
-       // mMemesListView.setAdapter(memesAdapter);
-
-        final Adapter adapter = new Adapter(memesList,this);
+        // mMemesListView.setAdapter(memesAdapter);
+        View fabView = findViewById(R.id.fab_add);
+        fabView.setVisibility(View.VISIBLE);
+        final Adapter adapter = new Adapter(memesList, this);
         recyclerView.setAdapter(adapter);
-
-
     }
 
     @Override

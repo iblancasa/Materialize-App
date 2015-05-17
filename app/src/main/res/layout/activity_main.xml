@@ -13,8 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_vertical_margin"
+        android:elevation="8dp"
+        android:translationZ="20dp"
         android:text="@string/activity_main_button_text"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="sans-serif-medium"
         android:layout_centerInParent="true"
         android:lineSpacingExtra="10dp"
         android:textSize="30sp"
@@ -36,5 +38,19 @@
         android:layout_centerInParent="true"
         android:visibility="gone"
         style="?android:attr/progressBarStyleLarge"
+        />
+    <ImageButton
+        android:id="@+id/fab_add"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/ripple"
+        android:stateListAnimator="@anim/anim"
+        android:src="@drawable/ic_action"
+        android:elevation="1dp"
         />
 </RelativeLayout>

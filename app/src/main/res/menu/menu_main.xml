@@ -6,4 +6,16 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never"/>
+    <item android:id="@+id/acc1"
+        android:title="Acción 1"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+    <item android:id="@+id/acc2"
+        android:title="Acción 2"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+    <item android:id="@+id/acc3"
+        android:title="Acción 3"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
 </menu>
