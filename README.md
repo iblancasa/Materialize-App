@@ -1,3 +1,7 @@
+# Materialize-App
+Materializar una aplicación
+
+
 # Enunciado
 
 **Tenéis que "materializar" esta aplicación. Solo la parte de IU no hay que tocar nada de la funcionalidad.**
@@ -10,13 +14,14 @@
 
 **[Ejemplos](https://github.com/mresti/Task-Materialize-Android-App)**
 
-
-
+[![Img1](img/imagen1_t.jpg)](img/imagen1.jpg)
+[![Img2](img/imagen2_t.jpg)](img/imagen2.jpg)
 
 ***
+***
+***
+***
 
-# Materialize-App
-Materializar una aplicación
 =======
 # Android App - Task: Materialize this app.
 
