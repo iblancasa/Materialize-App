@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.koushikdutta.ion.Ion;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
@@ -21,9 +22,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
 
     private List<MemeEntity> memes;
+    private Context context;
 
     public Adapter(List<MemeEntity> m, Context c){
         memes=m;
+        context=c;
     }
 
     @Override
@@ -42,6 +45,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         viewHolder.text.setText(rowData.getTitle());
         viewHolder.emotion.setText(rowData.getEmotion());
+
+        Ion.with(context)
+                .load(rowData.getPng())
+                .intoImageView(viewHolder.img);
+
 
         viewHolder.itemView.setTag(rowData);
     }
